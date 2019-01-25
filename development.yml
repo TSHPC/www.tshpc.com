@@ -2,10 +2,13 @@ version: '3'
 
 services:
   db:
-    image: postgres
+    build:
+      context: .
+      dockerfile: docker/db.docker
     volumes:
       - ./src/tmp/db:/var/lib/postgresql/data
 
+    #image: postgres
     # build:
     #   context: .
     #   dockerfile: docker/db/Dockerfile
