@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6
+    restart: always
+    environment:
+      POSTGERS_ROOT_PASSWORD: password
+      POSTGERS_DATABASE: tshpc
+      POSTGERS_USER: appuser
+      POSTGERS_PASSWORD: password
+    ports:
+      - "3307:3306"
+  app:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ".:/usr/src/app"
+    ports:
+      - "80:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_USER: root
+      DB_NAME: tshpc
+      DB_PASSWORD: password
+      DB_HOST: db

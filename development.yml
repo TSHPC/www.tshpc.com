@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./src/tmp/db:/var/lib/postgresql/data
+
+    # build:
+    #   context: .
+    #   dockerfile: docker/db/Dockerfile
+    # restart: always
+    # volumes:
+    #   - ./src/tmp/db:/var/lib/postgresql/data
+
+  gems:
+    image: busybox
+    volumes:
+      - /gems
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.docker
+    command: ./start.sh
+    volumes:
+      - ./src:/tshpc
+      - gems:/gems
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  
+volumes:
+  gems:

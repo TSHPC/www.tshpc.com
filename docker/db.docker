@@ -1,0 +1,17 @@
+FROM postgres
+# add some arguments to run as a user.
+ARG ctr_user
+ARG ctr_group
+ARG ctr_uid
+ARG ctr_gid	
+# create the same group and user as the host.
+RUN groupadd $ctr_group -f -g $ctr_gid 
+RUN useradd -rm -d /home/$ctr_user \
+                -s /bin/bash       \
+                -u $ctr_uid        \
+                -g $ctr_gid $ctr_user	
+RUN adduser $ctr_user sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+# specify that the user will be used instead of root. 
+USER $ctr_user
+#WORKDIR /home/$ctr_user
