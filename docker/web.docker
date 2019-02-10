@@ -9,6 +9,9 @@ ARG ctr_gid
 # the root directory of the website.
 ENV APP_DIR /tshpc
 
+# the gem dir.
+ENV GEM_DIR /gems
+
 # update the image.
 RUN apt-get update  -qq 
 RUN apt-get install sudo
@@ -33,7 +36,7 @@ WORKDIR ${APP_DIR}
 ADD ./src ${APP_DIR} 
 
 # bundle in a separate volume (see compose file) for fast caching.
-ENV BUNDLE_PATH /gems
+ENV BUNDLE_PATH ${GEM_DIR}
 
 # make sure the $APP_DIR belongs to $ctr_user.
 RUN chown -R ${ctr_user}:${ctr_group} ${APP_DIR}

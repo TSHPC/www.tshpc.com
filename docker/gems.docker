@@ -1,0 +1,29 @@
+FROM ubuntu
+
+# add some arguments to run as a user.
+ARG ctr_user
+ARG ctr_group
+ARG ctr_uid
+ARG ctr_gid
+
+# create the same group and user as the host.
+RUN groupadd ${ctr_group} -f -g ${ctr_gid} 
+RUN useradd  -m -d /home/${ctr_user} \
+                -s /bin/bash         \
+                -u ${ctr_uid}        \
+                -g ${ctr_gid} ${ctr_user}	
+RUN adduser ${ctr_user} sudo
+
+# the gem dir.
+ENV GEM_DIR /gems
+
+ADD ./gems ${GEM_DIR}
+
+# make sure the $GEM_DIR belongs to $ctr_user.
+RUN chown -R ${ctr_user}:${ctr_group} ${GEM_DIR}
+
+# shift to the same host user.
+USER ${ctr_user}
+
+# specify the work space.
+WORKDIR ${GEM_DIR}

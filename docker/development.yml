@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  gems:
+    build:
+      context: ../
+      dockerfile: docker/gems.docker
+    volumes:
+      - ../gems:/gems
+
+    #image: busybox
+    #volumes:
+    #  - /gems
+
   db:
     build:
       context: ../
@@ -16,11 +27,6 @@ services:
     # volumes:
     #   - ./src/tmp/db:/var/lib/postgresql/data
 
-  gems:
-    image: busybox
-    volumes:
-      - /gems
-
   web:
     build:
       context: ../
@@ -33,6 +39,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - gems
   
 volumes:
   gems:
