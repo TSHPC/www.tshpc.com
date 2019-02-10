@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     build:
-      context: .
+      context: ../
       dockerfile: docker/db.docker
     volumes:
       - ./src/tmp/db:/var/lib/postgresql/data
@@ -23,7 +23,7 @@ services:
 
   web:
     build:
-      context: .
+      context: ../
       dockerfile: docker/web.docker
     command: ./start.sh
     volumes:

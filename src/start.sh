@@ -9,9 +9,9 @@ if [ ! -f ${gem_file} ] ; then
 	echo "... bootstrap in $APP_DIR:"
 	echo "source 'https://rubygems.org'" > ${gem_file}
 	echo "gem 'rails', '~> 5.0.0'"      >> ${gem_file}
-	#gem 'bcrypt', '~> 3.1.7'
-	#gem 'jquery-rails'
-	#gem 'jquery-ui-rails'
+	echo "gem 'bcrypt', '~> 3.1.7'"     >> ${gem_file}
+	echo "gem 'jquery-rails'"           >> ${gem_file}
+	echo "gem 'jquery-ui-rails'"        >> ${gem_file}
 	touch ${gem_file}.lock
 	bundle check || bundle install
 	bundle exec rails new . --force --no-deps --database=postgresql
@@ -36,10 +36,12 @@ if [ ! -f ${gem_file} ] ; then
 	echo "  database: tshpc_production"                          >> ${db_file}
 	echo "  username: tshpc"                                     >> ${db_file}
 	echo "  password: <%= ENV['TSHPC_DATABASE_PASSWORD'] %>"     >> ${db_file}
-	bundle exec rake db:create
 fi
 
-# run the server.
+# build or update the database and then run the server.
 rm -f ${APP_DIR}/tmp/pids/server.pid
 bundle check || bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
 bundle exec rails s -b 0.0.0.0

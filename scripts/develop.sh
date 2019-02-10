@@ -1,4 +1,6 @@
 #!/bin/bash
-# CMD="rails new . --force --no-deps --database=postgresql"
-# docker-compose -f development.yml run --rm web ${CMD}
-docker-compose -f development.yml up
+DOCKER_DIR="./docker"
+
+COMPOSE_FILE="${DOCKER_DIR}/development.yml"
+
+docker-compose -f ${COMPOSE_FILE} up
