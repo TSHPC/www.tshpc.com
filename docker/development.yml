@@ -6,7 +6,7 @@ services:
       context: ../
       dockerfile: docker/db.docker
     volumes:
-      - ./src/tmp/db:/var/lib/postgresql/data
+      - ../src/tmp/db:/var/lib/postgresql/data
 
     #image: postgres
     # build:
@@ -27,7 +27,7 @@ services:
       dockerfile: docker/web.docker
     command: ./start.sh
     volumes:
-      - ./src:/tshpc
+      - ../src:/tshpc
       - gems:/gems
     ports:
       - "3000:3000"
