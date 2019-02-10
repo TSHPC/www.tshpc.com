@@ -9,6 +9,9 @@ if [ ! -f ${gem_file} ] ; then
 	echo "... bootstrap in $APP_DIR:"
 	echo "source 'https://rubygems.org'" > ${gem_file}
 	echo "gem 'rails', '~> 5.0.0'"      >> ${gem_file}
+	#gem 'bcrypt', '~> 3.1.7'
+	#gem 'jquery-rails'
+	#gem 'jquery-ui-rails'
 	touch ${gem_file}.lock
 	bundle check || bundle install
 	bundle exec rails new . --force --no-deps --database=postgresql
