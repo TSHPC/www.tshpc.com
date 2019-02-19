@@ -13,6 +13,7 @@ if [ ! -f ${gem_file} ] ; then
 	echo "gem 'jquery-rails'"           >> ${gem_file}
 	echo "gem 'jquery-ui-rails'"        >> ${gem_file}
 	echo "gem 'pg'"                     >> ${gem_file}
+	echo "gem 'bootstrap-sass'"         >> ${gem_file} 
 	touch ${gem_file}.lock
 	bundle check || bundle install
 	bundle exec rails new . --force --no-deps --database=postgresql

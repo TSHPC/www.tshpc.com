@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tshpc</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 
+                            'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 
+                               'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+	<body class='<%= controller.controller_name %>'>
+  
+  	<div id='banner' class='navigation_bar'>
+  		<div id='logo'>
+  				<%= image_tag 'logo_light.svg', alt: 'TSHPC logo' %>
+	  	</div>
+  		<div id='links'>
+        <%= link_to "Sign up", 
+          { controller: "pages", action: "show", page: "contact" } %>
+        <%= link_to "Sign in", 
+          { controller: "pages", action: "show", page: "contact" } %>
+
+  			<%= link_to "Contact", 
+  				{ controller: "pages", action: "show", page: "contact" } %>
+  			<%= link_to "Events", 
+  				{ controller: "pages", action: "show", page:  "events" } %>
+  			<%= link_to "About", 
+  				{ controller: "pages", action: "show", page:   "about" } %>
+  			<%= link_to "Home", 
+  				{ controller: "pages", action: "show", page:    "home" }, class: "active" %>
+  		</div>
+  	</div>
+    <div id='main'>
+    	<%= yield %>
+    </div>
+  
   </body>
 </html>

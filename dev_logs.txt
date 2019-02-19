@@ -1,0 +1,5 @@
+!#/bin/bash
+rails db:migrate
+rails g controller pages --skip-assets
+rails g scaffold User name:string password:digest
+rails db:migrate
