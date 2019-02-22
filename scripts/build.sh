@@ -10,6 +10,7 @@ DOCKER_DIR="./docker"
 COMPOSE_FILE="${DOCKER_DIR}/development.yml"
 
 #mkdir -p ./src/tmp/db
+mkdir -p ./gems
 
 docker-compose -f ${COMPOSE_FILE} build         \
 						  --build-arg ctr_user=$USER        \
