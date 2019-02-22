@@ -43,20 +43,21 @@ a:hover { background-color: transparent; }
 #banner {
 	position: fixed;
 	z-index: 999;
-	height: 4.5rem;
+	height: 3.5rem;
 	top: 0;
 	left: 0;
   width: 100%;
 	box-shadow: 0 0 10px rgba(0,0,0,0.6);
 	overflow: hidden;
   /*background: linear-gradient(#BEBEBE, #F2F3F4);*/
-  background-color: #F2F3F4;
+  /*background-color: #F2F3F4;*/
+  background-color: #C1C1C1;
 	#logo {
 		float: left;
 		img {
 			height: 2.5rem;
-			margin-top: 1rem;
-			margin-left: 1.5rem;
+			margin-top: 0.5rem;
+			margin-left: 0.75rem;
 		}
 	}
 	#links {
@@ -69,20 +70,20 @@ a:hover { background-color: transparent; }
   		color: gray;
   		text-align: center;
   		padding: 0.4rem 0.4rem;
-  		margin-top: 1.2rem;
+  		margin-top: 1rem;
   		text-decoration: none;
   		background-color: none;
 		}
-		a:hover { color: #C00000; /*#C60606;*/ }
-		a.active { color: black; font-weight: bold; }
+		a:hover { color: #C99C92; /*#C60606;*/ }
+		a.active { color: #C00000; font-weight: bold; }
 	}
 }
 
 #header {
-	margin-top:  4.5em;
-	min-height: 44.5em;
-	background: url('sidi_bou_said_banner_cartoon-gs.png') no-repeat;
-	background-size: 100% 100%;
+	margin-top:  3.5rem;
+	min-height: 43.5em;
+	background: url('header_banner_5.png') no-repeat;
+	background-size: 100% auto;
 	border-bottom: 2px solid #B5B5B5;
 }
 
