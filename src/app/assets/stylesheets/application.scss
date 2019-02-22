@@ -23,19 +23,16 @@ html { font-size: 100%; }
 body, body > p, body > ol, body > ul, body > td {
 	margin: 0px !important;
 	font-family: 'NTR', sans-serif;
+	font-size: 1em;
 }
 
 a:hover { background-color: transparent; }
 
-.navigation_bar {
-	overflow: hidden;
-  background: linear-gradient(#BEBEBE, #F2F3F4);
-}
-
 .text-box {
-	font-size: 1rem;
-	line-height: 1.5rem;  
+	font-size: 1em;
+	line-height: 1.5em;  
 	font-family: 'Montserrat', sans-serif;
+	text-align: justify;
 }
 
 .gray-scale {
@@ -46,35 +43,34 @@ a:hover { background-color: transparent; }
 #banner {
 	position: fixed;
 	z-index: 999;
-	height: 4.5em;
+	height: 4.5rem;
 	top: 0;
 	left: 0;
   width: 100%;
-	box-shadow: 0 0 40px rgba(0,0,0,0.6);
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	overflow: hidden;
+  /*background: linear-gradient(#BEBEBE, #F2F3F4);*/
+  background-color: #F2F3F4;
 	#logo {
 		float: left;
 		img {
-			height: 2.5em;
-			margin-top: 1em;
-			margin-left: 1.5em;
+			height: 2.5rem;
+			margin-top: 1rem;
+			margin-left: 1.5rem;
 		}
 	}
 	#links {
-		margin-right: 0.5em;
-		font-size: 1.3rem;
+		margin-right: 1rem;
+		font-size: 1.3em;
 	 	a {
-	 		height: 1em;
+	 		height: 1.3rem;
   		float: right;
   		display: block;
   		color: gray;
   		text-align: center;
-  		padding-left: 0.3em;
-  		padding-right: 0.3em;
-  		padding-bottom: 1em;
-  		padding-top: 0.1em;
-  		margin-top: 1em;
+  		padding: 0.4rem 0.4rem;
+  		margin-top: 1.2rem;
   		text-decoration: none;
-  		border-radius: 0.3em;
   		background-color: none;
 		}
 		a:hover { color: #C00000; /*#C60606;*/ }
@@ -83,11 +79,11 @@ a:hover { background-color: transparent; }
 }
 
 #header {
-	margin-top: 4.5em;
-	min-height:  45em;
-	background: url('header_banner.png') no-repeat;
-	background-size: 100% auto;
-	border-bottom: 2px solid #E5E5E5;
+	margin-top:  4.5em;
+	min-height: 54.5em;
+	background: url('sidi_bou_said_banner_cartoon-gs.png') no-repeat;
+	background-size: 100% 100%;
+	border-bottom: 2px solid #B5B5B5;
 }
 
 #notice {
@@ -104,14 +100,18 @@ a:hover { background-color: transparent; }
 }
 
 #main {
-	padding: 3em;
-	min-width: 40em;
-	/*background: #FCFCFC;*/
+	width: 50%;
+	display: flex;
 	flex: 1;
+  justify-content: center;
+  padding: 3em;
+/*	padding: 3em 15em 3em 15em;
+	min-height: 100em;
+	/*background: #FCFCFC;*/
 }
 
 #footer {
-	border: 1px solid #E5E5E5;
+	border-top: 2px solid #B5B5B5;
 	height: 50em;
 	background-color: #F5F5F5;
 }
