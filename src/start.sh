@@ -8,7 +8,7 @@ db_file="${APP_DIR}/config/database.yml"
 
 # check if we are generating for the first time. 
 if [ ! -f ${gem_file} ] ; then 
-	echo "... launching in $APP_DIR:"
+	echo "... launching rails in $APP_DIR:"
 	echo "source 'https://rubygems.org'"     > ${gem_file}
 	echo "gem 'rails', '~> 5.2.2'"          >> ${gem_file}
 	echo "gem 'bcrypt', '~> 3.1.7'"         >> ${gem_file}
@@ -25,7 +25,8 @@ fi
 
 bundle check || bundle install
 
-if [ ! -d ${root_dir} ] ; then 	
+if [ ! -d ${root_dir} ] ; then 
+	echo "... generating rails in $APP_DIR:"	
 	bundle exec rails new . --no-deps --database=postgresql
 	bundle check || bundle install
 	# adjust the database.yml file.
