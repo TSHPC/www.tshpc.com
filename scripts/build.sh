@@ -5,6 +5,7 @@ if [ "$1" == "-f" ] ; then
 fi
 
 SERVICES="persist_gems db web"
+
 DOCKER_DIR="./docker"
 
 COMPOSE_FILE="${DOCKER_DIR}/development.yml"

@@ -31,7 +31,6 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
-/bin 
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
