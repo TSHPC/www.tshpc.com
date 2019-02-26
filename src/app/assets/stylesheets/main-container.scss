@@ -1,0 +1,20 @@
+#notice-container {
+	color: #000 !important;
+	border: 2px solid red;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;
+}
+
+#notice-container:empty { display: none }
+
+#main-container {
+	width: 70%;
+	height: 50em;
+	display: flex;
+	flex: 1;
+  padding: 1em;
+  margin-left: 15%; 
+}
+
