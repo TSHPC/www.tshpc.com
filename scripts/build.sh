@@ -1,8 +1,7 @@
 #!/bin/bash
 if [ "$1" == "-f" ] ; then 
 	echo "... forcing new build"
-	rm -rf ./src/tmp/db
-	rm -rf ./src/Gemfile*
+	./scripts/clean.sh
 fi
 
 DOCKER_DIR="./docker"
@@ -10,7 +9,6 @@ DOCKER_DIR="./docker"
 COMPOSE_FILE="${DOCKER_DIR}/development.yml"
 
 mkdir -p ./src/tmp/db
-mkdir -p ./gems
 
 docker-compose -f ${COMPOSE_FILE} build         \
 						  --build-arg ctr_user=$USER        \

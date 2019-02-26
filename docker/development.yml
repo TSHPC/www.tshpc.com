@@ -1,16 +1,12 @@
 version: '3'
 
 services:
-  gems:
+  persist_gems:
     build:
       context: ../
       dockerfile: docker/gems.docker
     volumes:
-      - ../gems:/gems
-
-    #image: busybox
-    #volumes:
-    #  - /gems
+      - gems:/gems
 
   db:
     build:
@@ -18,14 +14,8 @@ services:
       dockerfile: docker/db.docker
     volumes:
       - ../src/tmp/db:/var/lib/postgresql/data
-
-    #image: postgres
-    # build:
-    #   context: .
-    #   dockerfile: docker/db/Dockerfile
-    # restart: always
-    # volumes:
-    #   - ./src/tmp/db:/var/lib/postgresql/data
+    depends_on:
+      - persist_gems
 
   web:
     build:
@@ -39,8 +29,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
-      - gems
-  
+
 volumes:
   gems:
-

@@ -1,22 +1,32 @@
 #!/bin/bash
 
 # bootstrap rails gems.
+root_dir="${APP_DIR}/app"
+srv_file="${APP_DIR}/tmp/pids/server.pid"
 gem_file="${APP_DIR}/Gemfile"
 db_file="${APP_DIR}/config/database.yml"
 
 # check if we are generating for the first time. 
 if [ ! -f ${gem_file} ] ; then 
-	echo "... bootstrap in $APP_DIR:"
-	echo "source 'https://rubygems.org'" > ${gem_file}
-	echo "gem 'rails', '~> 5.0.0'"      >> ${gem_file}
-	echo "gem 'bcrypt', '~> 3.1.7'"     >> ${gem_file}
-	echo "gem 'jquery-rails'"           >> ${gem_file}
-	echo "gem 'jquery-ui-rails'"        >> ${gem_file}
-	echo "gem 'pg'"                     >> ${gem_file}
-	echo "gem 'bootstrap-sass'"         >> ${gem_file} 
+	echo "... launching in $APP_DIR:"
+	echo "source 'https://rubygems.org'"     > ${gem_file}
+	echo "gem 'rails', '~> 5.2.2'"          >> ${gem_file}
+	echo "gem 'bcrypt', '~> 3.1.7'"         >> ${gem_file}
+	echo "gem 'pg'"                         >> ${gem_file}
+	echo "gem 'listen'"                     >> ${gem_file}
+	echo "gem 'bootstrap'"                  >> ${gem_file}
+	echo "gem 'turbolinks'"                 >> ${gem_file}
+	echo "gem 'coffee-rails'"               >> ${gem_file}
+	echo "gem 'jquery-rails'"               >> ${gem_file}
+	echo "gem 'jquery-ui-rails'"            >> ${gem_file}
+	echo "gem 'font-awesome-rails'"         >> ${gem_file} 
 	touch ${gem_file}.lock
-	bundle check || bundle install
-	bundle exec rails new . --force --no-deps --database=postgresql
+fi
+
+bundle check || bundle install
+
+if [ ! -d ${root_dir} ] ; then 	
+	bundle exec rails new . --no-deps --database=postgresql
 	bundle check || bundle install
 	# adjust the database.yml file.
 	cp ${db_file} ${db_file}.backup
@@ -38,12 +48,14 @@ if [ ! -f ${gem_file} ] ; then
 	echo "  database: tshpc_production"                          >> ${db_file}
 	echo "  username: tshpc"                                     >> ${db_file}
 	echo "  password: <%= ENV['TSHPC_DATABASE_PASSWORD'] %>"     >> ${db_file}
+	bundle exec rake db:create  2>/dev/null || bundle exec rake db:setup
+	bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
+	bundle exec rake db:seed
 fi
 
 # build or update the database and then run the server.
-rm -f ${APP_DIR}/tmp/pids/server.pid
 bundle check || bundle install
-bundle exec rake db:create
-bundle exec rake db:migrate
+bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
 bundle exec rake db:seed
+rm -f ${srv_file}
 bundle exec rails s -b 0.0.0.0

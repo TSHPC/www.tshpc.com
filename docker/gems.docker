@@ -17,13 +17,15 @@ RUN adduser ${ctr_user} sudo
 # the gem dir.
 ENV GEM_DIR /gems
 
-ADD ./gems ${GEM_DIR}
-
 # make sure the $GEM_DIR belongs to $ctr_user.
+RUN mkdir -p ${GEM_DIR}
 RUN chown -R ${ctr_user}:${ctr_group} ${GEM_DIR}
 
 # shift to the same host user.
 USER ${ctr_user}
+
+# make sure the GEM_DIR belongs to the user.
+VOLUME ${GEM_DIR}
 
 # specify the work space.
 WORKDIR ${GEM_DIR}

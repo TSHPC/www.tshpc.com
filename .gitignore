@@ -13,6 +13,7 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+src/bin/* 
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -63,5 +64,5 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
-# Ignore gems dir
-./gems
+# Ignore all .keep files
+.keep

@@ -32,17 +32,15 @@ EXPOSE 3000
 # specify the work space.
 WORKDIR ${APP_DIR}
 
-# add the workspace to allow writing into a mounted volume.
-ADD ./src ${APP_DIR} 
-
 # bundle in a separate volume (see compose file) for fast caching.
 ENV BUNDLE_PATH ${GEM_DIR}
 
-# make sure the $APP_DIR belongs to $ctr_user.
-RUN chown -R ${ctr_user}:${ctr_group} ${APP_DIR}
 
 # shift to the same host user.
 USER ${ctr_user}
+
+# make sure the volume belongs to the user.
+ADD ./src ${APP_DIR} 
 
 # the command of the container.
 CMD ["./start.sh"]
