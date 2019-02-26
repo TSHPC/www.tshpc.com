@@ -1,5 +1,6 @@
 # Ignore backup files
 *~
+.DS_Store
 
 # TODO Comment out this rule if environment variables can be committed
 .env

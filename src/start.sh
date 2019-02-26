@@ -11,6 +11,7 @@ if [ ! -f ${gem_file} ] ; then
 	echo "... launching rails in $APP_DIR:"
 	echo "source 'https://rubygems.org'"     > ${gem_file}
 	echo "gem 'rails', '~> 5.2.2'"          >> ${gem_file}
+	echo "gem 'bootsnap'"                   >> ${gem_file}
 	echo "gem 'bcrypt', '~> 3.1.7'"         >> ${gem_file}
 	echo "gem 'pg'"                         >> ${gem_file}
 	echo "gem 'listen'"                     >> ${gem_file}
