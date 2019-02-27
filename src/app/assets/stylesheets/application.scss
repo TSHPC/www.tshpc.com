@@ -17,25 +17,30 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Montserrat|NTR|Roboto');
 
+$font-stack: 'Montserrat', sans-serif;
+$font-h-stack: fa5-proxima-nova, 'NTR', sans-serif;
+$theme-color: #2874A6; 
+
 html { font-size: 100%; }
 
 body, body > p, body > ol, body > ul, body > td {
 	margin: 0px !important;
-	font-family: 'NTR', sans-serif;
+	font-family: $font-stack;
 	font-size: 1em;
 }
 
+a { text-decoration: none; }
 a:hover { background-color: transparent; }
 
 .text-box {
-	font-size: 1em;
+	font-size: 1.2em;
 	line-height: 1.5em;  
-	font-family: 'Montserrat', sans-serif;
+	font-family: $font-stack; 
 	text-align: justify;
 	color: black;
 	h1, h2, h3 {
-		font-family: 'NTR', sans-serif;
-		color: #C00000;
+		font-family: $font-h-stack;
+		color: $theme-color;
 	}
 }
 
@@ -46,12 +51,13 @@ a:hover { background-color: transparent; }
 
 .left { float:   left; }
 .right { float: right; }
+.hidden { display: none; }
 
-@import "navigation-container";
-@import "header-container";
-@import "pinned-container";
-@import "main-container";
-@import "footer-container";
+@import "navigation";
+@import "header";
+@import "pinned";
+@import "main";
+@import "footer";
 
 @media all and (max-width: 800px) {
  	#main-container {

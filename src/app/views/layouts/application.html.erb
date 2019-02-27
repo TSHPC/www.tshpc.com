@@ -16,44 +16,51 @@
 	<body class='<%= controller.controller_name %>'>
   
   	<div id='navigation-container'>
-      <%= fa_icon("fas, bars") %>
-  		<%= link_to image_tag('logo_light.svg', 
-                             alt: 'TSHPC logo', 
-                             id:  'logo'), root_path %>
+      <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+        <%= fa_icon("fas, bars")%>
+  	  <% end %>
+    	<%= link_to(root_path, id: 'logo') do %>
+        <%= image_tag('logo_light.svg')%>
+      <%end%>
       <%= fa_icon("fas, user") %>
-
-
-<!--         <%= link_to "Login", 
-            { controller: "pages", 
-              action:      "show", 
-              page:     "contact" }%>  		
- --></div>
-    
-    <!--     <div id='links'>
-        <%= link_to "Contact", 
-          { controller: "pages", action: "show", page: "contact" } %>
-        <%= link_to "Events", 
-          { controller: "pages", action: "show", page:  "events" } %>
-        <%= link_to "About", 
-          { controller: "pages", action: "show", page:   "about" } %>
-        <%= link_to "Home", 
-          { controller: "pages", action: "show", page:    "home" }, 
-          class: "active-link" %>
     </div>
- -->    
+    <div id='navigation-links' class='hidden'>
+      <%= link_to({ controller: "pages", action: "show", page: "home" }, 
+                   class: 'navigation-line') do %>
+        <%= fa_icon("fas, home") %>
+        <span class='text'>Home</span>
+      <% end %>
+      <%= link_to({ controller: "pages", action: "show", page: "about" }, 
+                   class: 'navigation-line') do %>
+        <%= fa_icon("fas, info-circle") %>
+        <span class='text'>About</span>
+      <% end %>
+      <%= link_to({ controller: "pages", action: "show", page: "events" }, 
+                   class: 'navigation-line') do %>
+        <%= fa_icon("far, calendar") %>
+        <span class='text'>Events</span>
+      <% end %>
+      <%= link_to({ controller: "pages", action: "show", page: "contact" }, 
+                   class: 'navigation-line') do %>
+        <%= fa_icon("fas, envelope") %>
+        <span class='text'>Contact</span>
+      <% end %>
+    </div> 
+    <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+      <div id='navigation-mask' class='hidden'></div>
+    <%end%>
+   
     <div id='header-container'>
       <%= image_tag 'header_banner_5.png', alt: 'Header banner' %>
     </div>
     
     <div id='pinned-container'>
       <div class='pinned-box'>
-        box one
       </div>
       <div class='pinned-box pinned-middle'>
-        box two
       </div>
       <div class='pinned-box'>
-        box three
+        <%= fa_icon("fas, coins") %>
       </div>
     </div>
     

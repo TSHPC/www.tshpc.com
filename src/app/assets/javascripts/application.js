@@ -15,3 +15,18 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+function toggle_menu() {
+  var x = document.getElementById("navigation-links");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+  var y = document.getElementById("navigation-mask");
+  if (y.style.display === "block") {
+    y.style.display = "none";
+  } else {
+    y.style.display = "block";
+  }
+}

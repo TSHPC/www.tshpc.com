@@ -1,0 +1,112 @@
+/*
+ * decoration of the top bar.
+ * 
+ */
+
+$navbg: #EEEEEE;
+$navbg-icon-color: #B1B1B1;
+$navbg-icon-hover-color: #DADADA;
+
+#navigation-container {
+	position: fixed;
+	z-index: 999;
+	height: 3.5rem;
+	top: 0;
+	left: 0;
+  width: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  background-color: $navbg;
+
+  .fa-bars {
+  	height: 3.5rem;
+  	width:  3.5rem;
+  	font-size: 2.5rem;
+  	padding-left: 0.6rem;
+  	padding-top:  0.5rem;
+  	float:  left;
+  	color: gray;
+	}
+	
+	#logo {
+		display: block;
+		float: left;
+		height: 3.5rem;
+		width: 16.5rem;
+		background-color: none; 
+		img {
+			height: 2.5rem;
+			margin-top:  0.5rem;
+			margin-left: 0.5rem;	
+		}
+	}
+
+	.fa-user {
+  	height: 2.5rem;
+  	width:  2.5rem;
+  	font-size: 2rem;
+  	margin-top: 0.5rem;  
+  	margin-right: 0.75rem; 
+  	padding-top: 0.25rem; 
+		padding-left: 0.55rem;
+  	float: right;
+  	border-radius: 1.5rem;
+		background-color: $navbg-icon-color; 
+		color: gray;
+	}
+
+	.fa-bars:hover, .fa-user:hover { 
+		background-color: $navbg-icon-hover-color;
+		color: $theme-color; 
+	}
+}
+
+#navigation-links {
+	position: fixed;
+	z-index: 1099;
+	width: 20em;
+	top: 3.5rem;
+	left: 0;
+  min-height: 100%;
+	background-color: $navbg;
+	
+	.navigation-line {
+		color: gray;
+		width: 100%;
+		height: 3.5rem;
+		float: left;
+		display: block;
+		text-decoration: none; 
+		text-align: left;
+		.fa-home, .fa-info-circle, .fa-envelope, .fa-calendar {
+			float: left;
+		  height: 3.5rem;
+  		width:  3.5rem;
+  		font-size: 2rem;
+  		padding-left: 0.75rem;
+  		padding-top:  0.75rem;
+		}
+		.text {
+  		float: left;
+  		font-size: 1.2em;
+  		padding-top: 0.85rem;
+  		padding-left: 0.75rem;  			
+		}
+	}
+	.navigation-line:hover {
+		background-color: $navbg-icon-hover-color; 
+		color: $theme-color; 
+	}
+}
+
+#navigation-mask {
+	position: fixed;
+	z-index: 1099;
+	width: 100%;
+	top: 0rem;
+	left: 20rem;
+	opacity: 0.5;
+	background-color: black;
+  min-height: 100%;
+}
+
+
