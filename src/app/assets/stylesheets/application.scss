@@ -17,9 +17,12 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Montserrat|NTR|Roboto');
 
-$font-stack: 'Montserrat', sans-serif;
+/*$font-stack: 'Montserrat', sans-serif;*/
+$font-stack: fa5-proxima-nova, 'NTR', sans-serif;
 $font-h-stack: fa5-proxima-nova, 'NTR', sans-serif;
-$theme-color: #2874A6; 
+$theme-color: #2E4053; 
+$theme-color-border: #FFCC00 ; /*#F1C40F;*/
+$theme-color-border-light: #EBEDEF;
 
 html { font-size: 100%; }
 
@@ -29,17 +32,18 @@ body, body > p, body > ol, body > ul, body > td {
 	font-size: 1em;
 }
 
-a { text-decoration: none; }
+a, a:link, a:visited, a:hover, a:active { text-decoration: none; }
 a:hover { background-color: transparent; }
 
 .text-box {
-	font-size: 1.2em;
+	font-size: 1.5em;
 	line-height: 1.5em;  
 	font-family: $font-stack; 
 	text-align: justify;
-	color: black;
+	color: #626567;
 	h1, h2, h3 {
 		font-family: $font-h-stack;
+		font-weight: bold;
 		color: $theme-color;
 	}
 }
@@ -53,9 +57,25 @@ a:hover { background-color: transparent; }
 .right { float: right; }
 .hidden { display: none; }
 
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 @import "navigation";
 @import "header";
-@import "pinned";
+@import "highlights";
 @import "main";
 @import "footer";
 

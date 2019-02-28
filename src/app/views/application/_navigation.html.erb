@@ -1,0 +1,34 @@
+<div id='navigation-container'>
+  <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+    <%= fa_icon("fas, bars")%>
+  <% end %>
+	<%= link_to(root_path, id: 'logo') do %>
+    <%= image_tag('logo_light.svg')%>
+  <%end%>
+  <%= fa_icon("fas, user") %>
+</div>
+<div id='navigation-links' class='hidden'>
+  <%= link_to({ controller: "pages", action: "show", page: "home" }, 
+               class: 'navigation-line') do %>
+    <%= fa_icon("fas, home") %>
+    <span class='text'>Home</span>
+  <% end %>
+  <%= link_to({ controller: "pages", action: "show", page: "about" }, 
+               class: 'navigation-line') do %>
+    <%= fa_icon("fas, info-circle") %>
+    <span class='text'>About</span>
+  <% end %>
+  <%= link_to({ controller: "pages", action: "show", page: "events" }, 
+               class: 'navigation-line') do %>
+    <%= fa_icon("far, calendar") %>
+    <span class='text'>Events</span>
+  <% end %>
+  <%= link_to({ controller: "pages", action: "show", page: "contact" }, 
+                   class: 'navigation-line') do %>
+    <%= fa_icon("fas, envelope") %>
+    <span class='text'>Contact</span>
+  <% end %>
+</div> 
+<%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+  <div id='navigation-mask' class='hidden'></div>
+<%end%>

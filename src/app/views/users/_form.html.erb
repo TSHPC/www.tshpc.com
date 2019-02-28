@@ -1,3 +1,4 @@
+<div class='form'>
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +12,8 @@
     </div>
   <% end %>
 
+  <fieldset>
+  <legend>Enter your user details</legend>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -29,4 +32,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  </fieldset>
 <% end %>
+</div>

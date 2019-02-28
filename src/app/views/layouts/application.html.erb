@@ -14,67 +14,12 @@
   </head>
 
 	<body class='<%= controller.controller_name %>'>
-  
-  	<div id='navigation-container'>
-      <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
-        <%= fa_icon("fas, bars")%>
-  	  <% end %>
-    	<%= link_to(root_path, id: 'logo') do %>
-        <%= image_tag('logo_light.svg')%>
-      <%end%>
-      <%= fa_icon("fas, user") %>
-    </div>
-    <div id='navigation-links' class='hidden'>
-      <%= link_to({ controller: "pages", action: "show", page: "home" }, 
-                   class: 'navigation-line') do %>
-        <%= fa_icon("fas, home") %>
-        <span class='text'>Home</span>
-      <% end %>
-      <%= link_to({ controller: "pages", action: "show", page: "about" }, 
-                   class: 'navigation-line') do %>
-        <%= fa_icon("fas, info-circle") %>
-        <span class='text'>About</span>
-      <% end %>
-      <%= link_to({ controller: "pages", action: "show", page: "events" }, 
-                   class: 'navigation-line') do %>
-        <%= fa_icon("far, calendar") %>
-        <span class='text'>Events</span>
-      <% end %>
-      <%= link_to({ controller: "pages", action: "show", page: "contact" }, 
-                   class: 'navigation-line') do %>
-        <%= fa_icon("fas, envelope") %>
-        <span class='text'>Contact</span>
-      <% end %>
-    </div> 
-    <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
-      <div id='navigation-mask' class='hidden'></div>
-    <%end%>
-   
-    <div id='header-container'>
-      <%= image_tag 'header_banner_5.png', alt: 'Header banner' %>
-    </div>
-    
-    <div id='pinned-container'>
-      <div class='pinned-box'>
-      </div>
-      <div class='pinned-box pinned-middle'>
-      </div>
-      <div class='pinned-box'>
-        <%= fa_icon("fas, coins") %>
-      </div>
-    </div>
-    
+    <%= render 'navigation' %>
+    <%= render 'header' %>
     <div id='main-container'>
-    	<%= yield %>
+      <%= yield %>
     </div>
-   
-    <footer id='footer-container'> 
-      <div class='copyright-box'>
-        Copyright &copy; <%= Time.current.year %> TSHPC All rights reserved.<br>  
-        TSHPC is an an association founded in Tunisia 
-      </div>
-    </footer>  
-  
+    <%= render 'footer' %>
   </body>
 
 </html>

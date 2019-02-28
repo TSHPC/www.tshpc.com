@@ -1,12 +1,12 @@
-#pinned-container {
-	position: relative;
+#highlights-container {
+	position: absolute;
 	z-index: 899;
-	margin-top: -8em;
-	width: 70%;
-	height: 16em;
-  margin-left: 15%; 
+	margin-top: -6em;
+	width: 85%;
+	height: 12em;
+  padding-left: 15%; 
   /*border: 1px solid red;*/
-	.pinned-box {
+	.highlights-box {
 		position: relative;
 		width: 30%;
 		height: 100%;
@@ -19,7 +19,7 @@
 		border-radius: 0.5em;
 		color: black;
 	}
-	.pinned-middle {
+	.highlights-middle {
 		margin: 0% 5%;
 	}
 }

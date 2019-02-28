@@ -10,11 +10,21 @@
 #notice-container:empty { display: none }
 
 #main-container {
-	width: 70%;
-	height: 50em;
-	display: flex;
-	flex: 1;
-  padding: 1em;
-  margin-left: 15%; 
+	position: relative;
+	width: 100%;
+	/*min-height: 20em;*/
+	/*display: flex;*/
+	/*flex: 1;*/
+  
+/*  padding: 1em;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto; 
+*/
 }
 
+.half-container {
+	width: 50%;
+	float: right;
+  margin: 5rem;
+}

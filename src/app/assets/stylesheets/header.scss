@@ -1,13 +1,55 @@
 #header-container {
 	z-index: 99;
 	margin-top:  3.5rem;
-	/*min-height: 43.5em;*/
-	/*background: url('header_banner_5.png') no-repeat;*/
-	/*background-size: 100% auto;*/
-	border-bottom: 1px solid #B5B5B5;
-	img {
+	border-bottom: 4px solid $theme-color-border;
+	position: relative;
+	.header-img {
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+
+	.header-text {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 50%;
+		height: 10rem;
+		z-index: 199;
+		text-align: left;
+		background-color: $theme-color;
+		border-radius: 1rem;
+		opacity: 0.85;
+		padding: 2rem;
+		h2 {
+			font-weight: bold;
+			font-size: 2.5em;
+			color: white;
+		}
+		h3 {
+			font-weight: bold;
+			font-size: 1.5em;
+			color: $theme-color-border;
+		}
+		p {
+			line-height: 0.5rem;
+			font-size: 1.5em;
+			color: #00E4FF;
+		}
+		a {
+			position: absolute;
+			right: 1rem;
+			bottom: 1rem;
+			color: $theme-color;
+			font-weight: bold;
+			background-color: #66EA62;
+			border-radius: 0.5rem;
+			font-size: 1.5em;
+			padding: 0.6rem 1rem 0.4rem 1rem;
+		}
+		a:hover {
+			color: $theme-color;
+			background-color: $theme-color-border;
+		}
 	}
 }
