@@ -1,5 +1,7 @@
 #header-container {
-	z-index: 99;
+	display: flex;
+	flex: 1;
+	flex-direction: column-reverse;
 	margin-top:  3.5rem;
 	border-bottom: 4px solid $theme-color-border;
 	position: relative;
@@ -11,30 +13,29 @@
 
 	.header-text {
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		width: 50%;
-		height: 10rem;
-		z-index: 199;
+		top: 2rem;
+		right: 2rem;
+		width: 46%;
+		height: 12rem;
 		text-align: left;
 		background-color: $theme-color;
 		border-radius: 1rem;
-		opacity: 0.85;
+		opacity: 0.95;
 		padding: 2rem;
 		h2 {
 			font-weight: bold;
-			font-size: 2.5em;
+			font-size: 3em;
 			color: white;
 		}
 		h3 {
 			font-weight: bold;
-			font-size: 1.5em;
+			font-size: 2.5em;
 			color: $theme-color-border;
 		}
 		p {
-			line-height: 0.5rem;
-			font-size: 1.5em;
-			color: #00E4FF;
+			line-height: 0.5em;
+			font-size: 2em;
+			color:  #0792FF;
 		}
 		a {
 			position: absolute;
@@ -52,4 +53,14 @@
 			background-color: $theme-color-border;
 		}
 	}
+}
+
+@media all and (max-width: $small-size) {
+ 	#header-container {
+		flex-direction: column;
+ 	  .header-text {
+ 			width: 92%;
+			margin: auto;
+	  }
+  }
 }

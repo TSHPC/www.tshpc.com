@@ -1,3 +1,15 @@
+<% content_for :header do %>
+  <%= image_tag 'header_banner_5.png', :class => 'header-img' %>
+  <div class='header-text'>
+    <div class='vertical-center left'>
+      <h2>#TshpcConf 2019 </h2>
+      <p> Ecole Polytechnique de Tunisie – Tunisia</p>
+      <h3>March 27 - 29 </h3>
+    </div>
+    <%= link_to("Register", root_path, class: 'right') %>
+  </div>  
+<% end %>
+
 <div id='header-container'>
 	<%= yield :header %>
 </div>

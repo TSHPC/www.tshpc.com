@@ -23,6 +23,10 @@ $font-h-stack: fa5-proxima-nova, 'NTR', sans-serif;
 $theme-color: #2E4053; 
 $theme-color-border: #FFCC00 ; /*#F1C40F;*/
 $theme-color-border-light: #EBEDEF;
+$theme-color-border-dark:  #BDC3C7;
+$text-color: #5D5D5D; /*#7A7A7A;*/
+
+$small-size: 800px;
 
 html { font-size: 100%; }
 
@@ -40,11 +44,23 @@ a:hover { background-color: transparent; }
 	line-height: 1.5em;  
 	font-family: $font-stack; 
 	text-align: justify;
-	color: #626567;
+	color: $text-color;
 	h1, h2, h3 {
 		font-family: $font-h-stack;
 		font-weight: bold;
 		color: $theme-color;
+	}
+}
+
+.error-box {
+	border: none;
+	border-radius: 0.5rem;
+	background-color: #FFE9E9;
+	padding: 1rem;
+	color: red;
+	ul {
+		list-style-type: none;
+		margin-left: -2rem;
 	}
 }
 
@@ -79,14 +95,9 @@ a:hover { background-color: transparent; }
 @import "main";
 @import "footer";
 
-@media all and (max-width: 800px) {
- 	#main-container {
-		flex-direction: column-reverse;
+@media all and (max-width: $small-size) {
+ 	.text-box > h1, h2, h3 {
+		text-align: left;
 	}
 }
 
-@media all and (max-width: 500px) {
-	#navigation-bar .title {
-		display: none;
-	}
-}

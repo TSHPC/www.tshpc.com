@@ -10,12 +10,15 @@
 #notice-container:empty { display: none }
 
 #main-container {
+	padding-top: 3rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	padding-bottom: 2rem;
 	position: relative;
 	width: 100%;
 	/*min-height: 20em;*/
-	/*display: flex;*/
-	/*flex: 1;*/
-  
+	display: flex;
+	flex-wrap: wrap;
 /*  padding: 1em;
   margin-top: 1rem;
   margin-left: auto;
@@ -23,8 +26,98 @@
 */
 }
 
+%container {
+  /*border: 1px solid $theme-color-border-light;*/
+  background-color: white;
+  border-radius: 0.5rem;
+  /*padding: 2rem;*/
+  margin: 2rem auto;
+  img {
+  	width: 100%;
+  	height: auto;
+  	border-radius: 0.5rem;
+  }
+}
+
 .half-container {
-	width: 50%;
-	float: right;
-  margin: 5rem;
+	@extend %container;
+	width: 46%;
+}
+
+.center-container {
+	@extend %container;
+	width: 70%;
+	/*min-height: 60rem;*/
+	margin-left: auto;
+	margin-right: auto; 
+  margin-bottom: 3rem;
+  margin-top: -20rem;
+  opacity: 0.96;  
+}
+
+.form {
+	position: relative;
+/*	width: 80%;
+	margin-left: auto;  
+	margin-right: auto; 
+*/	
+	fieldset {
+		display: flex;
+		flex-wrap: wrap;
+		border-top: 4px solid $theme-color-border;
+		padding-top: 1.5rem;
+		#error_explanation {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		.field {
+			margin-bottom: 1rem;
+			label {
+				width: 100%;
+				padding-right: 1rem;
+				padding-top: 0.5rem;
+			}
+			input {
+				width: 100%;
+				border:none;
+				color: $theme-color-border-dark;
+				border-bottom: 1px dotted $theme-color-border-dark;
+			}
+			input:focus {
+				outline: none;
+				color: $text-color;
+				border-bottom: 1px solid $theme-color-border;
+			}
+		}
+	}
+	.actions {
+		input {
+			/*position: absolute;
+			right: 1rem;
+			bottom: 1rem;
+			*/
+			color: $theme-color;
+			background-color: #66EA62;
+			border-radius: 0.5rem;
+			/*font-size: 1.5em;*/
+			padding: 0.6rem 1rem 0.4rem 1rem;
+			border: none;
+			float: right;
+		}
+		input:hover {
+			color: $theme-color;
+			background-color: $theme-color-border;
+		}
+	}
+}
+
+@media all and (max-width: $small-size) {
+ 	#main-container {
+		flex-direction: column;
+	}
+	.half-container, .center-container {
+		width: 96%;
+		margin: 2rem auto;
+	}
 }

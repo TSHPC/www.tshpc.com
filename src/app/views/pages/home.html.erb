@@ -1,4 +1,8 @@
-<div class='half-container text-box left'>
+
+<% content_for :highlights do %>
+<% end %>
+
+ <div class='half-container text-box'>
   <h1>The HPC and AI revolution is here</h1>
 
 	We are proud to announce our 3rd edition of the Tunisian Workshop On High 
@@ -12,16 +16,24 @@
 	sessions for attendees with no HPC or AI background.
 	This would be a static home page in a Rails application.
 </div>
+<div class='half-container text-box'>
+	<%= image_tag 'hpc.jpg' %>
+</div>
+<div class='half-container text-box'>
+	<%= image_tag 'ai.jpg' %>
+</div>
+<div class='half-container text-box'>
+	<h1>The HPC serving Artificial Intelligence</h1>
 
+	We are proud to announce our 3rd edition of the Tunisian Workshop On High 
+	Performance Computing & Artificial Intelligence. As usual, we will have a 
+	plenary session where we will cover new advances in the field. We are also
+	pleased to have some experts on-board from various backgrounds and tackling 
+	various challenges with their use cases.
 
-<% content_for :header do %>
-  <%= image_tag 'header_banner_5.png', :class => 'header-img' %>
-  <div class='header-text'>
-  	<div class='vertical-center left'>
-  		<h2>#TshpcConf 2019 </h2>
-  		<p> Ecole Polytechnique de Tunisie – Tunisia</p>
-  		<h3>March 27 - 29 </h3>
-  	</div>
-  	<%= link_to("Register", root_path, class: 'right') %>
-  </div>	
-<% end %>
+	The novelty this year will consist in more advanced labs in order to ensure 
+	the continuity with the previous sessions. We will maintain introductory 
+	sessions for attendees with no HPC or AI background.
+	This would be a static home page in a Rails application.
+
+</div>
