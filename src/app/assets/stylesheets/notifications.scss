@@ -1,0 +1,26 @@
+.notice {
+	border: none;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	ul {
+		list-style-type: none;
+		margin-left: -2rem;
+		margin-bottom: -0.05rem;
+	}
+	margin-bottom: 1rem;
+}
+
+.notice:empty { display: none }
+
+.error {
+	background-color: #FFE9E9;
+	color: red;
+}
+.info {
+	background-color: $theme-color-border;
+	color: $theme-color;
+}
+
+.alert {
+	
+}

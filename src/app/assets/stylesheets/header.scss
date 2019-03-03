@@ -12,9 +12,10 @@
 	}
 
 	.hd-text {
-		position: absolute;
+		position: fixed;
+		z-index: 999;
 		font-family: $font-h-stack;
-		top: 4rem;
+		top: 7.5rem;
 		right: 4rem;
 		width: 45%;
 		height: 10rem;

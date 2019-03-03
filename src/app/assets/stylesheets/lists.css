@@ -1,0 +1,25 @@
+/*
+ * table listings decoration:
+ */
+table {
+	border-collapse: collapse;
+}
+
+%list {
+	/*padding: 1rem;*/
+	vertical-align: top;
+	width: 100%;
+	td {
+		vertical-align: top;
+		padding: 2rem;
+	}
+}
+
+.list-line-odd {
+	@extend %list;
+	background-color: #F7F9F9;
+}
+
+.list-line-even {
+	@extend %list;
+}

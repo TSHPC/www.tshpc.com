@@ -21,6 +21,11 @@
 	flex-wrap: wrap;
 }
 
+.mf-container {
+	@extend %container;
+	width: 100%;
+}
+
 .ml-container, .mr-container {
 	@extend %container;
 	width: 50%;

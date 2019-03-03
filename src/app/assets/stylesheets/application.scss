@@ -42,23 +42,6 @@ a:hover {
 	background-color: transparent; 
 }
 
-.notice {
-	border: none;
-	border-radius: 0.5rem;
-	padding: 1rem;
-	ul {
-		list-style-type: none;
-		margin-left: -2rem;
-	}
-}
-
-.notice:empty { display: none }
-
-.err {
-	background-color: #FFE9E9;
-	color: red;
-}
-
 .gray-scale {
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
@@ -87,6 +70,8 @@ a:hover {
 @import "text";
 @import "forms";
 @import "containers";
+@import "notifications";
+@import "lists";
 
 @import "navigation";
 @import "header";

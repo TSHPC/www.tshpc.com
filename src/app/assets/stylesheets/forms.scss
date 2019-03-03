@@ -23,7 +23,6 @@
 				border-bottom: 1px dotted $theme-color-border-dark;
 			}
 			textarea {
-				min-height: 10rem;
 				border: 1px dotted $theme-color-border-dark;
 			}
 			input:focus {
@@ -37,16 +36,14 @@
 				border: 1px solid $theme-color-border;
 			}
 		}
-		
 		.select-field {
-
 			margin-bottom: 1rem;
 			label {
 				width: 100%;
 				color: $theme-color-border-dark;
 			}
 			select {
-				width: 100%;
+				/*width: 100%;*/
 				color: $text-color;
 				border: 1px dotted $theme-color-border-dark;
 			}
@@ -105,7 +102,17 @@
 	color: $theme-color;
 }
 
+%btn{
+	outline: none;
+}
+
+%btn, %btn:link, %btn:visited, %btn:hover, %btn:active { 
+	text-decoration: none; 
+	outline: none;
+}
+
 .btn-stl-1 {
+	@extend %btn;
 	color: $theme-color-border;
 	font-weight: bold;
 	background-color: $theme-color;
@@ -120,6 +127,7 @@
 }
 
 .btn-stl-2 {
+	@extend %btn;
 	color: white;
 	background-color: $theme-color-border-dark;
 	border-radius: 0.5rem;
@@ -129,5 +137,6 @@
 }
 
 .btn-stl-2:hover {
+	color: white;
 	background-color: $theme-color;
 }
