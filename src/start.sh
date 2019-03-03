@@ -9,19 +9,19 @@ db_file="${APP_DIR}/config/database.yml"
 # check if we are generating for the first time. 
 if [ ! -f ${gem_file} ] ; then 
 	echo "... launching rails in $APP_DIR:"
-	echo "source 'https://rubygems.org'"     > ${gem_file}
-	echo "gem 'rails', '~> 5.2.2'"          >> ${gem_file}
-	echo "gem 'bootsnap'"                   >> ${gem_file}
-	echo "gem 'bcrypt', '~> 3.1.7'"         >> ${gem_file}
-	echo "gem 'pg'"                         >> ${gem_file}
-	echo "gem 'listen'"                     >> ${gem_file}
-	echo "gem 'bootstrap'"                  >> ${gem_file}
-	echo "gem 'turbolinks'"                 >> ${gem_file}
-	echo "gem 'coffee-rails'"               >> ${gem_file}
-	echo "gem 'jquery-rails'"               >> ${gem_file}
-	echo "gem 'jquery-ui-rails'"            >> ${gem_file}
-	echo "gem 'font-awesome-rails'"         >> ${gem_file} 
-  #echo "gem 'carrierwave'"                >> ${gem_file} 
+	echo "source 'https://rubygems.org'"         > ${gem_file}
+	echo "gem 'rails', '~> 5.2.2'"              >> ${gem_file}
+	echo "gem 'bootsnap'"                       >> ${gem_file}
+	echo "gem 'bcrypt', '~> 3.1.7'"             >> ${gem_file}
+	echo "gem 'pg'"                             >> ${gem_file}
+	echo "gem 'listen'"                         >> ${gem_file}
+	echo "gem 'bootstrap'"                      >> ${gem_file}
+	echo "gem 'turbolinks'"                     >> ${gem_file}
+	echo "gem 'coffee-rails'"                   >> ${gem_file}
+	echo "gem 'jquery-rails'"                   >> ${gem_file}
+	echo "gem 'jquery-ui-rails'"                >> ${gem_file}
+	echo "gem 'font-awesome-rails'"             >> ${gem_file} 
+  	echo "gem 'acts-as-taggable-on', '~> 6.0'"  >> ${gem_file} 
 	touch ${gem_file}.lock
 fi
 
@@ -55,9 +55,18 @@ if [ ! -d ${root_dir} ] ; then
 	bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
 	bundle exec rake db:seed
 fi
+# set the environment.
+bin/rails db:environment:set RAILS_ENV=${RAILS_ENV}
 
 # build or update the database and then run the server.
 bundle check || bundle install
+
+bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
+# for the acts_as_taggable gem
+if [ -z "$(find db/migrate/ -name "*acts_as_taggable*")" ] ; then
+	bundle exec rake acts_as_taggable_on_engine:install:migrations
+fi
+
 bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
 bundle exec rake db:seed
 rm -f ${srv_file}
