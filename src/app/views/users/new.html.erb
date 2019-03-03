@@ -1,7 +1,9 @@
-<div class='center-container'>
-<h1>Enter your details to sign up an account</h1>
+<div class='md-container text'>
+	<%= link_to(:back) do %>
+    <%= fa_icon("fas, times-circle") %>
+  <% end %>
 
-<%= render 'form', user: @user %>
+	<h2>Enter your details to sign up an account</h2>
 
-<%= link_to 'Back', users_path %>
-</div>	
+	<%= render 'form', user: @user %>
+</div>

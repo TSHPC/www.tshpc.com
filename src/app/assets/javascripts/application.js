@@ -17,13 +17,13 @@
 //= require_tree .
 
 function toggle_menu() {
-  var x = document.getElementById("navigation-links");
+  var x = document.getElementById("nav-links");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
     x.style.display = "block";
   }
-  var y = document.getElementById("navigation-mask");
+  var y = document.getElementById("nav-mask");
   if (y.style.display === "block") {
     y.style.display = "none";
   } else {

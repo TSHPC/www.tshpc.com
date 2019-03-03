@@ -2,41 +2,39 @@
  * decoration of the top bar.
  * 
  */
-
-$navbg: white; /*#EEEEEE;*/
+$navbg: white;
 $navbg-icon-color: #B1B1B1;
 $navbg-icon-hover-color: #DADADA;
 
-#navigation-container {
+.nav-container {
 	position: fixed;
 	z-index: 999;
 	height: 3.5rem;
 	top: 0;
 	left: 0;
   width: 100%;
-	/*box-shadow: 0 0 10px rgba(0,0,0,0.6);*/
 	border-bottom: 1px solid $theme-color-border-light;
   background-color: $navbg;
 
   .fa-bars {
   	height: 3.5rem;
   	width:  3.5rem;
-  	font-size: 2.5rem;
-  	padding-left: 0.6rem;
-  	padding-top:  0.5rem;
+  	font-size: 2rem;
+  	padding-left: 0.85rem;
+  	padding-top:  0.75rem;
   	float:  left;
   	color: $theme-color;
 	}
 	
-	#logo {
+	.nav-logo {
 		display: block;
 		float: left;
 		height: 3.5rem;
 		width: 16.5rem;
 		background-color: none; 
 		img {
-			height: 2.5rem;
-			margin-top:  0.5rem;
+			height: 2rem;
+			margin-top:  0.75rem;
 			margin-left: 0.5rem;	
 		}
 	}
@@ -63,10 +61,37 @@ $navbg-icon-hover-color: #DADADA;
 		padding-top: 0.1rem; 
 		padding-left: 0.4rem;
 	}
-
 }
 
-#navigation-links {
+.nav-link {
+	position: relative;
+	color: gray;
+	width: 100%;
+	height: 3.5rem;
+	text-decoration: none; 
+	padding: 0;
+	margin: 0;
+	.fa-home, .fa-info-circle, .fa-envelope, .fa-calendar {
+		float: left;
+		height: 3.5rem;
+  	width:  3.5rem;
+  	font-size: 2rem;
+  	padding-left: 0.75rem;
+  	padding-top:  0.75rem;
+	}
+	.nav-text {
+  	float: left;
+  	padding-top: 0.85rem;
+  	padding-left: 0.5rem;  			
+	}
+}
+
+.nav-link:hover {
+	background-color: $navbg-icon-hover-color; 
+	color: $theme-color; 
+}
+
+#nav-links {
 	position: fixed;
 	z-index: 1099;
 	width: 20em;
@@ -74,37 +99,9 @@ $navbg-icon-hover-color: #DADADA;
 	left: 0;
   min-height: 100%;
 	background-color: $navbg;
-	
-	.navigation-line {
-		color: gray;
-		width: 100%;
-		height: 3.5rem;
-		float: left;
-		display: block;
-		text-decoration: none; 
-		text-align: left;
-		.fa-home, .fa-info-circle, .fa-envelope, .fa-calendar {
-			float: left;
-		  height: 3.5rem;
-  		width:  3.5rem;
-  		font-size: 2rem;
-  		padding-left: 0.75rem;
-  		padding-top:  0.75rem;
-		}
-		.text {
-  		float: left;
-  		font-size: 1.2em;
-  		padding-top: 0.85rem;
-  		padding-left: 0.75rem;  			
-		}
-	}
-	.navigation-line:hover {
-		background-color: $navbg-icon-hover-color; 
-		color: $theme-color; 
-	}
 }
 
-#navigation-mask {
+#nav-mask {
 	position: fixed;
 	z-index: 1099;
 	width: 100%;
@@ -114,5 +111,4 @@ $navbg-icon-hover-color: #DADADA;
 	background-color: black;
   min-height: 100%;
 }
-
 

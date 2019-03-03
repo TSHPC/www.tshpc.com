@@ -14,9 +14,16 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New User"
 
-    fill_in "Name", with: @user.name
+    fill_in "Activity domain", with: @user.activity_domain
+    fill_in "Bio", with: @user.bio
+    fill_in "Email", with: @user.email
+    fill_in "First name", with: @user.first_name
+    fill_in "Institution", with: @user.institution
+    fill_in "Last name", with: @user.last_name
     fill_in "Password", with: 'secret'
     fill_in "Password confirmation", with: 'secret'
+    fill_in "Photo url", with: @user.photo_url
+    fill_in "Role", with: @user.role
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -27,9 +34,16 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "Edit", match: :first
 
-    fill_in "Name", with: @user.name
+    fill_in "Activity domain", with: @user.activity_domain
+    fill_in "Bio", with: @user.bio
+    fill_in "Email", with: @user.email
+    fill_in "First name", with: @user.first_name
+    fill_in "Institution", with: @user.institution
+    fill_in "Last name", with: @user.last_name
     fill_in "Password", with: 'secret'
     fill_in "Password confirmation", with: 'secret'
+    fill_in "Photo url", with: @user.photo_url
+    fill_in "Role", with: @user.role
     click_on "Update User"
 
     assert_text "User was successfully updated"

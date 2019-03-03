@@ -1,34 +1,39 @@
-<div id='navigation-container'>
+<div class='nav-container'>
   <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
     <%= fa_icon("fas, bars")%>
   <% end %>
-	<%= link_to(root_path, id: 'logo') do %>
+	<%= link_to(root_path, class: 'nav-logo') do %>
     <%= image_tag('logo_light.svg')%>
   <%end%>
   <%= fa_icon("fas, user") %>
 </div>
-<div id='navigation-links' class='hidden'>
+
+<div id='nav-links' class='hidden'>
   <%= link_to({ controller: "pages", action: "show", page: "home" }, 
-               class: 'navigation-line') do %>
+               class: 'nav-link') do %>
     <%= fa_icon("fas, home") %>
-    <span class='text'>Home</span>
+    <span class='nav-text'>Home</span>
   <% end %>
+
   <%= link_to({ controller: "pages", action: "show", page: "about" }, 
-               class: 'navigation-line') do %>
+               class: 'nav-link') do %>
     <%= fa_icon("fas, info-circle") %>
-    <span class='text'>About</span>
+    <span class='nav-text'>About</span>
   <% end %>
+
   <%= link_to({ controller: "pages", action: "show", page: "events" }, 
-               class: 'navigation-line') do %>
+               class: 'nav-link') do %>
     <%= fa_icon("far, calendar") %>
-    <span class='text'>Events</span>
+    <span class='nav-text'>Events</span>
   <% end %>
+
   <%= link_to({ controller: "pages", action: "show", page: "contact" }, 
-                   class: 'navigation-line') do %>
+                   class: 'nav-link') do %>
     <%= fa_icon("fas, envelope") %>
-    <span class='text'>Contact</span>
+    <span class='nav-text'>Contact</span>
   <% end %>
 </div> 
+
 <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
-  <div id='navigation-mask' class='hidden'></div>
+  <div id='nav-mask' class='hidden'></div>
 <%end%>

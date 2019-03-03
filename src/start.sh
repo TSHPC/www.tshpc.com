@@ -21,6 +21,7 @@ if [ ! -f ${gem_file} ] ; then
 	echo "gem 'jquery-rails'"               >> ${gem_file}
 	echo "gem 'jquery-ui-rails'"            >> ${gem_file}
 	echo "gem 'font-awesome-rails'"         >> ${gem_file} 
+  #echo "gem 'carrierwave'"                >> ${gem_file} 
 	touch ${gem_file}.lock
 fi
 

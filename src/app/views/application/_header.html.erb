@@ -1,15 +1,15 @@
 <% content_for :header do %>
-  <%= image_tag 'header_banner_5.png', :class => 'header-img' %>
-  <div class='header-text'>
-    <div class='vertical-center left'>
+  <%= image_tag 'header_banner_1.png', class: 'hd-img' %>
+  <div class='hd-text'>
+    <div class='v-center'>
       <h2>#TshpcConf 2019 </h2>
       <p> Ecole Polytechnique de Tunisie – Tunisia</p>
       <h3>March 27 - 29 </h3>
     </div>
-    <%= link_to("Register", root_path, class: 'right') %>
+    <%= link_to("Register", root_path, class: 'btn-stl-1') %>
   </div>  
 <% end %>
 
-<div id='header-container'>
+<div class='hd-container'>
 	<%= yield :header %>
 </div>

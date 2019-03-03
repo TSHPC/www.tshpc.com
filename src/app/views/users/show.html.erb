@@ -1,8 +1,38 @@
-<p id="notice"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @user.institution %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @user.occupation %>
+</p>
+
+<p>
+  <strong>Activity domain:</strong>
+  <%= @user.activity_domain %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @user.bio %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

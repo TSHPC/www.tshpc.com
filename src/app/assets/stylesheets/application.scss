@@ -18,50 +18,45 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|NTR|Roboto');
 
 /*$font-stack: 'Montserrat', sans-serif;*/
-$font-stack: fa5-proxima-nova, 'NTR', sans-serif;
+$font-stack: 'Montserrat';
 $font-h-stack: fa5-proxima-nova, 'NTR', sans-serif;
 $theme-color: #2E4053; 
 $theme-color-border: #FFCC00 ; /*#F1C40F;*/
 $theme-color-border-light: #EBEDEF;
 $theme-color-border-dark:  #BDC3C7;
-$text-color: #5D5D5D; /*#7A7A7A;*/
-
+$text-color: #4E637E; /*#5D5D5D; /*#7A7A7A;*/
+$text-h-color: #5DADE2;  /*#7DCEEE;*/
 $small-size: 800px;
-
-html { font-size: 100%; }
 
 body, body > p, body > ol, body > ul, body > td {
 	margin: 0px !important;
 	font-family: $font-stack;
-	font-size: 1em;
+	font-size: 16px;
 }
 
-a, a:link, a:visited, a:hover, a:active { text-decoration: none; }
-a:hover { background-color: transparent; }
-
-.text-box {
-	font-size: 1.5em;
-	line-height: 1.5em;  
-	font-family: $font-stack; 
-	text-align: justify;
-	color: $text-color;
-	h1, h2, h3 {
-		font-family: $font-h-stack;
-		font-weight: bold;
-		color: $theme-color;
-	}
+a, a:link, a:visited, a:hover, a:active { 
+	text-decoration: none; 
 }
 
-.error-box {
+a:hover { 
+	background-color: transparent; 
+}
+
+.notice {
 	border: none;
 	border-radius: 0.5rem;
-	background-color: #FFE9E9;
 	padding: 1rem;
-	color: red;
 	ul {
 		list-style-type: none;
 		margin-left: -2rem;
 	}
+}
+
+.notice:empty { display: none }
+
+.err {
+	background-color: #FFE9E9;
+	color: red;
 }
 
 .gray-scale {
@@ -69,11 +64,11 @@ a:hover { background-color: transparent; }
   filter: grayscale(100%);
 }
 
-.left { float:   left; }
-.right { float: right; }
-.hidden { display: none; }
+.hidden { 
+	display: none; 
+}
 
-.vertical-center {
+.v-center {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -81,7 +76,7 @@ a:hover { background-color: transparent; }
   transform: translateY(-50%);
 }
 
-.horizontal-center {
+.h-center {
   margin: 0;
   position: absolute;
   left: 50%;
@@ -89,15 +84,13 @@ a:hover { background-color: transparent; }
   transform: translateX(-50%);
 }
 
+@import "text";
+@import "forms";
+@import "containers";
+
 @import "navigation";
 @import "header";
-@import "highlights";
-@import "main";
 @import "footer";
 
-@media all and (max-width: $small-size) {
- 	.text-box > h1, h2, h3 {
-		text-align: left;
-	}
-}
+
 

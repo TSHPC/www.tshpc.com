@@ -1,12 +1,9 @@
-<div class='form text-box'>
+<div class='form'>
 <%= form_with(model: user, local: true) do |form| %>
-
+  
   <fieldset>
-
   <% if user.errors.any? %>
-    <div id="error_explanation", class='error-box'>
-<!--       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
- -->
+    <div class='notice err'>
       <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -14,12 +11,12 @@
       </ul>
     </div>
   <% end %>
-  
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, value: 'your text here', onfocus: "value=''" %>
-  </div>
 
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email%>
+  </div>
+  
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
@@ -30,8 +27,48 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'Create my account' %>
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name%>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name%>
+  </div>
+  
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number%>
+  </div>
+
+  <div class="select-field">
+    <%= form.label :activity_domain %>
+    <%= form.collection_select :activity_domain, 
+                          ActivityDomain.all ,:id, :name,
+                          {:prompt => 'please select one option'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :institution %>
+    <%= form.text_field :institution%>
+  </div>
+
+  <div class="radio-field">
+    <%= form.label :occupation, class: 'radio-title' %>
+    <div class="radio-body">
+      <%= form.collection_radio_buttons :occupation, 
+                          Occupation.all ,:id, :name %>
+    </div>
+  </div>
+ 
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio %>
+  </div>
+
+  <div class="actions-field">
+    <%= form.submit 'Create my account', class: 'btn-stl-2' %>
   </div>
   </fieldset>
 <% end %>

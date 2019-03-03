@@ -1,0 +1,133 @@
+.form {
+	position: relative;
+
+	fieldset {
+		display: flex;
+		flex-wrap: wrap;
+		/*border-top: 2px solid $theme-color-border;*/
+		padding-top: 1.5rem;
+		#error_explanation {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+		.field {
+			margin-bottom: 1rem;
+			label {
+				width: 100%;
+				color: $theme-color-border-dark;
+			}
+			input, textarea {
+				width: 100%;
+				border:none;
+				color: $theme-color-border-light;
+				border-bottom: 1px dotted $theme-color-border-dark;
+			}
+			textarea {
+				min-height: 10rem;
+				border: 1px dotted $theme-color-border-dark;
+			}
+			input:focus {
+				outline: none;
+				color: $text-color;
+				border-bottom: 1px solid $theme-color-border;
+			}
+			textarea:focus {
+				outline: none;
+				color: $text-color;
+				border: 1px solid $theme-color-border;
+			}
+		}
+		
+		.select-field {
+
+			margin-bottom: 1rem;
+			label {
+				width: 100%;
+				color: $theme-color-border-dark;
+			}
+			select {
+				width: 100%;
+				color: $text-color;
+				border: 1px dotted $theme-color-border-dark;
+			}
+			select:focus {
+				outline: none;
+				color: $text-color;
+				border: 1px solid $theme-color-border;
+			}
+		}
+		.radio-field {
+			.radio-title {
+				width: 100%;
+				color: $theme-color-border-dark;
+			}
+			.radio-body {
+				border: 1px dotted $theme-color-border-dark;
+				padding: 1rem;
+				margin-bottom: 1rem;
+				label {
+					width: 95%;
+				}
+				input {
+					width: 5%;
+					border:none;
+					color: $theme-color-border-light;
+					border-bottom: 1px dotted $theme-color-border-dark;
+				}
+				input:focus {
+					outline: none;
+					color: $text-color;
+					border-bottom: 1px solid $theme-color-border;
+				}
+			}	
+			.radio-body:hover {
+				border: 1px solid $theme-color-border;
+			}
+		}
+	}
+	.actions-field {
+		input {
+			float: right;
+		}
+	}	
+}
+
+.fa-times-circle {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	z-index: 99;
+  font-size: 2rem;
+	color: $theme-color-border-dark; /* $theme-color;*/
+}
+
+.fa-times-circle:hover {
+	color: $theme-color;
+}
+
+.btn-stl-1 {
+	color: $theme-color-border;
+	font-weight: bold;
+	background-color: $theme-color;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	padding: 0.6rem 1rem 0.4rem 1rem;
+}
+
+.btn-stl-1:hover {
+	color: $theme-color;
+	background-color: $text-h-color;
+}
+
+.btn-stl-2 {
+	color: white;
+	background-color: $theme-color-border-dark;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	border: none;
+	font-weight: bold;
+}
+
+.btn-stl-2:hover {
+	background-color: $theme-color;
+}

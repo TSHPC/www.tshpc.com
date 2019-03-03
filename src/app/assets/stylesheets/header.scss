@@ -1,64 +1,56 @@
-#header-container {
+.hd-container {
 	display: flex;
 	flex: 1;
 	flex-direction: column-reverse;
 	margin-top:  3.5rem;
 	border-bottom: 4px solid $theme-color-border;
 	position: relative;
-	.header-img {
+	.hd-img {
 		width: 100%;
 		height: auto;
 		display: block;
 	}
 
-	.header-text {
+	.hd-text {
 		position: absolute;
-		top: 2rem;
-		right: 2rem;
-		width: 46%;
-		height: 12rem;
+		font-family: $font-h-stack;
+		top: 4rem;
+		right: 4rem;
+		width: 45%;
+		height: 10rem;
 		text-align: left;
-		background-color: $theme-color;
-		border-radius: 1rem;
-		opacity: 0.95;
+		background-color: $theme-color-border;
+		border-radius: 0.5rem;
+		opacity: 0.8;
 		padding: 2rem;
 		h2 {
+			padding-top: 1rem; 
 			font-weight: bold;
-			font-size: 3em;
-			color: white;
+			font-size: 3rem;
+			color: $theme-color;
 		}
 		h3 {
 			font-weight: bold;
-			font-size: 2.5em;
-			color: $theme-color-border;
+			font-size: 2.5rem;
+			color: $text-h-color; 
 		}
 		p {
-			line-height: 0.5em;
-			font-size: 2em;
-			color:  #0792FF;
+			line-height: 0;
+			font-size: 2rem;
+			color: #717D7E; 
 		}
 		a {
 			position: absolute;
 			right: 1rem;
 			bottom: 1rem;
-			color: $theme-color;
-			font-weight: bold;
-			background-color: #66EA62;
-			border-radius: 0.5rem;
-			font-size: 1.5em;
-			padding: 0.6rem 1rem 0.4rem 1rem;
-		}
-		a:hover {
-			color: $theme-color;
-			background-color: $theme-color-border;
 		}
 	}
 }
 
 @media all and (max-width: $small-size) {
- 	#header-container {
+ 	.hd-container {
 		flex-direction: column;
- 	  .header-text {
+ 	  .hd-text {
  			width: 92%;
 			margin: auto;
 	  }

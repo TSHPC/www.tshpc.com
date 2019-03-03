@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.order(:name)
+    @users = User.all
   end
 
   # GET /users/1
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user  = User.new
   end
 
   # GET /users/1/edit
@@ -24,8 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_url, 
-        notice: 'User #{@user.name} was successfully created.'
+      redirect_to @user, notice: 'User was successfully created.'
     else
       render :new
     end
@@ -34,8 +33,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to users_url,
-        notice: 'User #{@user.name} was successfully updated.'
+      redirect_to @user, notice: 'User was successfully updated.'
     else
       render :edit
     end
@@ -55,6 +53,15 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:email, 
+                                   :first_name,
+                                   :last_name, 
+                                   :photo_url,
+                                   :phone_number, 
+                                   :institution,
+                                   :activity_domain,
+                                   :bio,
+                                   :password,
+                                   :password_confirmation)
     end
 end
