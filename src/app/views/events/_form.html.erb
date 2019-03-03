@@ -1,0 +1,54 @@
+<div class='form'>
+  <%= form_with(model: event, local: true) do |form| %>
+    <fieldset>
+    <% if event.errors.any? %>
+      <div class="notice error">
+        <ul>
+          <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, rows: 3 %>
+    </div>
+
+    <div class="select-field">
+      <%= form.label :starts_at %>
+      <%= form.datetime_select :starts_at %>
+    </div>
+
+    <div class="select-field">
+      <%= form.label :ends_at %>
+      <%= form.datetime_select :ends_at %>
+    </div>
+
+    <div class="field">
+      <%= form.label :location %>
+      <%= form.text_area :location, rows: 2 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+
+    <div class="field">
+      <%= form.label :discounted_price %>
+      <%= form.text_field :discounted_price %>
+    </div>
+
+    <div class="actions-field">
+      <%= form.submit 'Submit', class: 'btn-stl-2'%>
+    </div>
+    </fieldset>
+  <% end %>
+</div>

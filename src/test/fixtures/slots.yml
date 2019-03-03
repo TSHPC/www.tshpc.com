@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  abstract: MyText
+  prerequisites: MyText
+  location: MyString
+  schedule: one
+
+two:
+  title: MyString
+  abstract: MyText
+  prerequisites: MyText
+  location: MyString
+  schedule: two

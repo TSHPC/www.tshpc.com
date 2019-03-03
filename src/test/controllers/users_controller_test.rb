@@ -43,7 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     patch user_url(@user), 
       params: { user: { bio: @user.bio, 
                         email: @user.email, 
-                        first_name: @user.first_name,
+                        first_name: "#{@user.first_name}jr",
                         institution: @user.institution,
                         last_name: @user.last_name,
                         password: 'secret',

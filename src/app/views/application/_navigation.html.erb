@@ -21,8 +21,7 @@
     <span class='nav-text'>About</span>
   <% end %>
 
-  <%= link_to({ controller: "pages", action: "show", page: "events" }, 
-               class: 'nav-link') do %>
+  <%= link_to(events_url, class: 'nav-link') do %>
     <%= fa_icon("far, calendar") %>
     <span class='nav-text'>Events</span>
   <% end %>

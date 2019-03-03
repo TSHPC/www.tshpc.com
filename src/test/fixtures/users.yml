@@ -4,9 +4,7 @@ one:
   email: bob@domain.com
   first_name: Bob
   last_name: Mane
-  photo_url: MyString
   institution: KIT
-  activity_domain: Engineering
   password_digest: <%= BCrypt::Password.create('secret') %>
   bio: "Engineering in Hydromechanics"
 
@@ -14,8 +12,6 @@ two:
   email: kevin@domain.com
   first_name: Kevin
   last_name: Heart
-  photo_url: MyString
   institution: SIAM
-  activity_domain: Mathemathcian
   password_digest: <%= BCrypt::Password.create('secret') %>
   bio: "Engineering in Biology"

@@ -1,0 +1,43 @@
+<div class='mf-container text'>
+
+<p class="notice info"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= truncate(strip_tags(@event.description), length: 80) %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @event.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @event.ends_at %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+
+<p>
+  <strong>Discounted price:</strong>
+  <%= @event.discounted_price %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+</div>

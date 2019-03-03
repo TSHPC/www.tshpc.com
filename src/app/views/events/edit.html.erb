@@ -1,0 +1,11 @@
+<div class='md-container text'>
+	<%= link_to(:back) do %>
+    <%= fa_icon("fas, times-circle") %>
+  <% end %>
+
+	<h2>Update the details of <%= @event.name%></h2>
+
+	<%= render 'form', event: @event %>
+
+	<%= link_to 'Show', @event %> |
+</div>
