@@ -22,6 +22,8 @@ services:
       context: ../
       dockerfile: docker/web.docker
     command: ./start.sh
+    environment:
+      - RAILS_ENV=development
     volumes:
       - ../src:/tshpc
       - gems:/gems
