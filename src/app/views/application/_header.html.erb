@@ -1,12 +1,14 @@
 <% content_for :header do %>
-  <%= image_tag 'header_banner_1.png', class: 'hd-img' %>
-  <div class='hd-text'>
-    <div class='v-center'>
-      <h2>#TshpcConf 2019 </h2>
-      <p> Ecole Polytechnique de Tunisie – Tunisia</p>
-      <h3>March 27 - 29 </h3>
-    </div>
-    <%= link_to("Register", root_path, class: 'btn-stl-1') %>
+  <%= image_tag 'header_banner_1.png', class: 'hd-bg' %>
+  <div class='hd-box hd-bottom hd-left hd-half hd-txt-left hd-stl-1'>
+    <h2>#TSHPConf 2019 </h2>
+    <strong> Ecole Polytechnique de Tunisie – Tunisia</strong>
+    <h3>March 27 - 29 </h3>      
+    <%= link_to("Register", root_path) %>
+  </div>
+
+  <div class='hd-box hd-half hd-top hd-left hd-txt-center hd-stl-2'>
+    <h3>Tunisian Society of High Performance Computing</h3>
   </div>  
 <% end %>
 

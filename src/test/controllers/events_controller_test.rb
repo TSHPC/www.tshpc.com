@@ -2,7 +2,19 @@ require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @event = events(:one)
+    @event  = events(:one)
+    @update =
+      { 
+        name: "TshpcConf 2019",
+        description: "The 3rd workshop in High Performance Computing and 
+                          and Artificial Intelligence",
+        price: 99.99, 
+        discounted_price: 49.99, 
+        location: "EPT Tunisia",
+        starts_at: "2019-03-27 08:00:00",
+        ends_at: "2019-03-29 17:00:00" 
+      }
+
   end
 
   test "should get index" do
@@ -17,19 +29,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create event" do
     assert_difference('Event.count') do
-      post events_url,
-        params: { 
-          event: { 
-            name: "TshpcConf 2019",
-            description: "The 3rd workshop in High Performance Computing and 
-                          and Artificial Intelligence",
-            price: 99.99, 
-            discounted_price: 49.99, 
-            location: "EPT Tunisia",
-            starts_at: "2019-03-27 08:00:00",
-            ends_at: "2019-03-29 17:00:00"
-          } 
-        }
+      post events_url, params: { event: @update }
     end
 
     assert_redirected_to event_url(Event.last)
@@ -46,18 +46,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update event" do
-    patch event_url(@event),
-      params: { 
-        event: { 
-          name: @event.name,
-          description: @event.description,
-          starts_at: @event.starts_at,
-          ends_at: @event.ends_at,
-          location: @event.location,
-          price: @event.price,
-          discounted_price: @event.discounted_price
-        }
-      }
+    patch event_url(@event), params: { event: @update }
     assert_redirected_to event_url(@event)
   end
 

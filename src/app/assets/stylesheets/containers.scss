@@ -72,10 +72,10 @@
 }
 
 @media all and (max-width: $small-size) {
- 	#main-container {
+ 	.main-container {
 		flex-direction: column;
 	}
-	.half-container, .center-container {
+	%container {
 		width: 96%;
 		margin: 2rem auto;
 		border: none;
