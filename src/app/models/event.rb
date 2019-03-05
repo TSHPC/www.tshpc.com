@@ -12,4 +12,7 @@ class Event < ApplicationRecord
 						 numericality: {greater_than_or_equal_to: 0.01}
   # association with schedules:
   has_one :schedule
+  # association with registrations:
+  has_many :registrations, dependent: :destroy 
+  has_many :users, through: :registrations, dependent: :destroy 
 end

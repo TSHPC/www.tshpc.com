@@ -44,8 +44,8 @@ Event.create!(
                 	the collaboration of the young professors of the University 
                 	of ESPRIT",
   	location: "Esprit Tunis -- Tunisia",
-  	starts_at: "2018-03-03 01:50:23",
-  	ends_at: "2018-03-05 01:50:23",
+  	starts_at: "2018-04-19 08:00:00",
+  	ends_at: "2018-04-21 17:00:00",
   	price: 50.00,
   	discounted_price: 25.00
   }

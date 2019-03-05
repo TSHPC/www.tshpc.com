@@ -67,6 +67,8 @@ if [ -z "$(find db/migrate/ -name "*acts_as_taggable*")" ] ; then
 	bundle exec rake acts_as_taggable_on_engine:install:migrations
 fi
 
+bundle exec rake db:drop
+bundle exec rake db:create
 bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
 bundle exec rake db:seed
 rm -f ${srv_file}

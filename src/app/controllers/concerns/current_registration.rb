@@ -1,9 +1,9 @@
-module CurrentCart
+module CurrentRegistration
 	private
-	def set_cart
-		@cart = Cart.find(session[:cart_id])
+	def set_registration
+		@cart = Registration.find(session[:registration_id])
 	rescue ActiveRecord::RecordNotFound
-		@cart = Cart.create
-		session[:cart_id] = @cart.id
+		@resgistration = resgistration.create
+		session[:resgistration_id] = @resgistration.id
 	end
 end

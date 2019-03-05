@@ -13,4 +13,20 @@ class User < ApplicationRecord
 
 	#   validates :image_url, allow_blank: true, format: { with:
 	# %r{\.(gif|jpg|png)\Z}i, message: 'must be a URL for GIF, JPG or PNG image.' }
+	
+	# association with registrations:
+  has_many :registrations
+  has_many :events, through: :registrations, dependent: :destroy 
+
+  # before_destroy :cancel_all_registrations
+
+
+
+  # private
+		# # ensure that there are no registration referencing this user
+		# def cancel_all_registrations
+		# 	unless registrations.empty?
+		# 		#errors.add(:base, 'registration present') throw :abort
+		# 	end
+		# end
 end
