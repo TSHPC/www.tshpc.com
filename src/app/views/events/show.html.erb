@@ -9,7 +9,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= truncate(strip_tags(@event.description), length: 80) %>
+  <%= sanitize(@event.description) %>
 </p>
 
 <p>
@@ -29,12 +29,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @event.price %>
+  <%= sprintf("%0.02f TND", @event.price) %>
 </p>
 
 <p>
   <strong>Discounted price:</strong>
-  <%= @event.discounted_price %>
+  <%= sprintf("%0.02f TND", @event.discounted_price) %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

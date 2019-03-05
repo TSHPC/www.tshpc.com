@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :events
-  resources :carts
   get 'admin/index'
   get 'sessions/new'
   get 'sessions/create'

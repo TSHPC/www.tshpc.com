@@ -5,12 +5,14 @@
 <h1>The list of the events organized by TSHPC lately</h1>
 
 <table>
+  <% cache @events.each do %>
   <% @events.each do |event| %>
+  <% cache event do %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even')%>" >
     <td class='list-description'>
       <dl>
         <dt><%= event.name %></dt>
-        <dd><%= truncate(strip_tags(event.description), length: 300) %></dd>
+        <dd><%= truncate(sanitize(event.description), length: 300) %></dd>
       </dl>
     </td>
     <td>
@@ -29,6 +31,8 @@
                                     data: { confirm: 'Are you sure?' } %>
     </td>
   </tr>
+  <% end %>
+  <% end %>
   <% end %>
 </table>
 
