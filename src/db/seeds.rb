@@ -24,9 +24,32 @@ ActivityDomain.create!(name: "Engineering")
 ActivityDomain.create!(name: "Industry")
 ActivityDomain.create!(name: "Other")
 
-
-
-
+Event.create!(
+[
+	{
+  	name: "TSHPConf 2017",
+  	description: "The 1st Tunisian workshop in High Performance Computing and 
+                  and Artificial Intelligence that was held in collaboration
+                  with ESPRIT, University of Tunis EL Manar, ARDIA and TOTAL",
+  	location: "Esprit Tunis -- Tunisia",
+  	starts_at: "2017-03-29 08:00:00",
+  	ends_at: "2017-03-31 17:00:00",
+  	price: 50.00,
+  	discounted_price: 25.00
+  },
+  {
+  	name: "TSHPConf 2018",
+  	description: "The 2nd Tunisian workshop in High Performance Computing and 
+                	and Artificial Intelligence that was also held in ESPRIT with 
+                	the collaboration of the young professors of the University 
+                	of ESPRIT",
+  	location: "Esprit Tunis -- Tunisia",
+  	starts_at: "2018-03-03 01:50:23",
+  	ends_at: "2018-03-05 01:50:23",
+  	price: 50.00,
+  	discounted_price: 25.00
+  }
+])
 
 
 

@@ -23,11 +23,6 @@ ActiveRecord::Schema.define(version: 2019_03_03_161551) do
     t.index ["user_id"], name: "index_activity_domains_on_user_id"
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "location"
