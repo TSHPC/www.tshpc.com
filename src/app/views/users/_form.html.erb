@@ -1,17 +1,17 @@
 <div class='form'>
 <%= form_with(model: user, local: true) do |form| %>
   
-  <fieldset>
   <% if user.errors.any? %>
-    <div class='notice error'>
+    <% content_for :error do %>
       <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+    <% end %>
   <% end %>
 
+  <fieldset>
   <div class="field">
     <%= form.label :email %>
     <%= form.email_field :email%>

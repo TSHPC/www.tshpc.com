@@ -1,14 +1,29 @@
 <div class='nav-container'>
-  <%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+  <%= link_to("javascript:void(0);", onclick: "nav_menu()") do %>
     <%= fa_icon("fas, bars")%>
   <% end %>
 	<%= link_to(root_path, class: 'nav-logo') do %>
     <%= image_tag('logo_light.svg')%>
   <%end%>
-  <%= fa_icon("fas, user") %>
+
+  <% if current_user? %>
+    <%= link_to("javascript:void(0);", onclick: "user_menu()") do %>
+      <%= fa_icon("fas, user") %>
+    <%end%>
+    <div id='user-menu' class='hidden'>
+      <center><%=current_user.email%></center>
+      <div class='or'><hr/></div> 
+      <%= button_to 'Logout',
+          logout_path, method: :delete, class: 'btn-stl-1' %>      
+    </div>
+  <% else %>
+    <%= link_to(new_user_url) do %>
+      <%= fa_icon("fas, user-plus") %>
+    <%end%>
+  <% end %>
 </div>
 
-<div id='nav-links' class='hidden'>
+<div id='nav-menu' class='hidden'>
   <%= link_to({ controller: "pages", action: "show", page: "home" }, 
                class: 'nav-link') do %>
     <%= fa_icon("fas, home") %>
@@ -31,8 +46,13 @@
     <%= fa_icon("fas, envelope") %>
     <span class='nav-text'>Contact</span>
   <% end %>
+
+  <%= link_to(users_url, class: 'nav-link nav-separator') do %>
+    <%= fa_icon("fas, users") %>
+    <span class='nav-text'>Manage users</span>
+  <% end %>
 </div> 
 
-<%= link_to("javascript:void(0);", onclick: "toggle_menu()") do %>
+<%= link_to("javascript:void(0);", onclick: "nav_menu()") do %>
   <div id='nav-mask' class='hidden'></div>
 <%end%>

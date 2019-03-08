@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :events, through: :registrations, dependent: :destroy 
 
   # before_destroy :cancel_all_registrations
-
+	after_destroy :ensure_one_admin_remains
 
 
   # private
@@ -29,4 +29,13 @@ class User < ApplicationRecord
 		# 		#errors.add(:base, 'registration present') throw :abort
 		# 	end
 		# end
+	class Error < StandardError
+	end
+	
+	private
+		def ensure_an_admin_remains
+			if User.count.zero?
+				raise Error.new "You can't delete last user"
+			end 
+		end
 end

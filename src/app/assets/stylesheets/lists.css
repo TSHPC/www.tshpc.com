@@ -6,7 +6,6 @@ table {
 }
 
 %list {
-	/*padding: 1rem;*/
 	vertical-align: top;
 	width: 100%;
 	td {
@@ -17,7 +16,8 @@ table {
 
 .list-line-odd {
 	@extend %list;
-	background-color: #F7F9F9;
+	background-color: $theme-color-light /* #F7F9F9*/;
+	border: 1px solid $theme-color-border-dark;
 }
 
 .list-line-even {

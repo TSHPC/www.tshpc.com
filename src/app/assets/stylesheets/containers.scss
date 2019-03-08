@@ -19,6 +19,7 @@
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .mf-container {
@@ -40,6 +41,19 @@
 	margin-right: auto; 
   margin-bottom: 3rem;
   margin-top: -20rem;
+  /*opacity: 1;  */
+}
+
+.mx-container {
+	@extend %container;
+	border-radius: 0.5rem;
+	width: 30%;
+	border: 1px solid $theme-color-border-light;
+	position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  /*margin-bottom: 3rem;*/
   /*opacity: 1;  */
 }
 

@@ -1,16 +1,17 @@
 <div class='form'>
   <%= form_with(model: event, local: true) do |form| %>
-    <fieldset>
+    
     <% if event.errors.any? %>
-      <div class="notice error">
+      <% content_for :error do %>
         <ul>
           <% event.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>
-      </div>
+      <% end %>
     <% end %>
-
+    
+    <fieldset>
     <div class="field">
       <%= form.label :name %>
       <%= form.text_field :name %>

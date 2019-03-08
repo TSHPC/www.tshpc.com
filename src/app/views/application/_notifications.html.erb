@@ -1,0 +1,15 @@
+<%= javascript_tag "display_notice_ifany()" %>	
+
+<div class="notice info">
+	<% if notice %>
+		<%= notice %>
+	<% end %>
+	<%= yield :info %>	
+</div>
+
+<div class="notice error">
+	<% if flash[:alert] %>
+    <%= flash[:alert] %>
+	<% end %>
+	<%= yield :error %>	
+</div>

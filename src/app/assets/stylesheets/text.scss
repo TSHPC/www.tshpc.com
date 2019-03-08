@@ -5,11 +5,10 @@
 	font-family: $font-stack; 
 	text-align: justify;
 	color: $text-color;
-	font-size: 1.3rem;
+	font-size: 1em;
 	h1, h2, h3 {
 		font-family: $font-h-stack;
   	color: $text-h-color;
-  	/*margin-bottom: -0.1rem;*/
 	}
 }
 

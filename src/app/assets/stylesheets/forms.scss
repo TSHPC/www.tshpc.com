@@ -2,14 +2,11 @@
 	position: relative;
 
 	fieldset {
-		display: flex;
+		position: relative;
+		/*display: flex;
 		flex-wrap: wrap;
-		/*border-top: 2px solid $theme-color-border;*/
+		*//*border-top: 2px solid $theme-color-border;*/
 		padding-top: 1.5rem;
-		#error_explanation {
-			width: 100%;
-			margin-bottom: 1rem;
-		}
 		.field {
 			margin-bottom: 1rem;
 			label {
@@ -17,12 +14,15 @@
 				color: $theme-color-border-dark;
 			}
 			input, textarea {
+				padding: 0.2rem;
 				width: 100%;
 				border:none;
-				color: $theme-color-border-light;
+				color: $theme-color;
 				border-bottom: 1px dotted $theme-color-border-dark;
+				/*border-radius: 0.2rem;*/
 			}
 			textarea {
+				border-radius: 0.2rem;
 				border: 1px dotted $theme-color-border-dark;
 			}
 			input:focus {
@@ -102,11 +102,10 @@
 	color: $theme-color;
 }
 
-%btn{
-	outline: none;
-}
-
 %btn, %btn:link, %btn:visited, %btn:hover, %btn:active { 
+	border: none;
+	/*display: block;*/
+	text-align: center;
 	text-decoration: none; 
 	outline: none;
 }
@@ -114,11 +113,11 @@
 .btn-stl-1 {
 	@extend %btn;
 	color: $theme-color-border;
-	font-weight: bold;
 	background-color: $theme-color;
-	border-radius: 0.5rem;
+	border-radius: 0.2rem;
 	font-size: 1.5rem;
-	padding: 0.6rem 1rem 0.4rem 1rem;
+	padding: 0.3rem 0.75rem 0.1rem 0.75rem;
+	font-family: $font-h-stack;
 }
 
 .btn-stl-1:hover {
@@ -128,12 +127,13 @@
 
 .btn-stl-2 {
 	@extend %btn;
-	color: white;
-	background-color: $theme-color-border-dark;
-	border-radius: 0.5rem;
+	color: $theme-color-border-dark;
+	background-color: $theme-color-light;
+	border-radius: 0.2rem;
 	padding: 0.5rem 1rem;
 	border: none;
 	font-weight: bold;
+	font-family: $font-stack;
 }
 
 .btn-stl-2:hover {

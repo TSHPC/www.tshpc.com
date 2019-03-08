@@ -19,9 +19,9 @@ $navbg-icon-hover-color: #DADADA;
   .fa-bars {
   	height: 3.5rem;
   	width:  3.5rem;
-  	font-size: 2rem;
-  	padding-left: 0.85rem;
-  	padding-top:  0.75rem;
+  	font-size: 1.5rem;
+  	padding-left: 1rem;
+  	padding-top:  1rem;
   	float:  left;
   	color: $theme-color;
 	}
@@ -30,37 +30,38 @@ $navbg-icon-hover-color: #DADADA;
 		display: block;
 		float: left;
 		height: 3.5rem;
-		width: 16.5rem;
 		background-color: none; 
 		img {
-			height: 2rem;
-			margin-top:  0.75rem;
-			margin-left: 0.5rem;	
+			height: 1.5rem;
+			margin-top:  1rem;
+			margin-left: 0rem;	
 		}
 	}
 
-	.fa-user {
-  	height: 2.5rem;
-  	width:  2.5rem;
-  	font-size: 2rem;
-  	margin-top: 0.5rem;  
-  	margin-right: 0.75rem; 
-  	padding-top: 0.25rem; 
-		padding-left: 0.55rem;
+	.fa-user, .fa-user-plus {
+  	height: 2.25rem;
+  	width:  2.25rem;
+  	font-size: 1.5rem;
+  	margin-top: 0.6rem;  
+  	margin-right: 1.2rem; 
+  	padding-top: 0.35rem; 
+		padding-left: 0.4rem;
   	float: right;
   	border-radius: 1.5rem;
-		background-color: $navbg-icon-hover-color; 
+		/*background-color: $navbg-icon-hover-color; */
 		color: $theme-color;
 	}
 
 	.fa-bars:hover { 
 		background-color: $navbg-icon-hover-color;
 	}
-	.fa-user:hover { 
-		border: 2px solid $theme-color-border;
-		padding-top: 0.1rem; 
-		padding-left: 0.4rem;
+	.fa-user:hover, .fa-user-plus:hover { 
+		background-color: $navbg-icon-hover-color;
 	}
+}
+
+.nav-separator {
+	border-top: 1px solid $theme-color-border-light;
 }
 
 .nav-link {
@@ -71,13 +72,13 @@ $navbg-icon-hover-color: #DADADA;
 	text-decoration: none; 
 	padding: 0;
 	margin: 0;
-	.fa-home, .fa-info-circle, .fa-envelope, .fa-calendar {
+	.fa-users, .fa-home, .fa-info-circle, .fa-envelope, .fa-calendar {
 		float: left;
 		height: 3.5rem;
   	width:  3.5rem;
-  	font-size: 2rem;
-  	padding-left: 0.75rem;
-  	padding-top:  0.75rem;
+  	font-size: 1.5rem;
+  	padding-left: 1rem;
+  	padding-top:  1rem;
 	}
 	.nav-text {
   	float: left;
@@ -91,10 +92,10 @@ $navbg-icon-hover-color: #DADADA;
 	color: $theme-color; 
 }
 
-#nav-links {
+#nav-menu {
 	position: fixed;
 	z-index: 1099;
-	width: 20em;
+	width: 20rem;
 	top: 3.4rem;
 	left: 0;
   min-height: 100%;
@@ -112,3 +113,16 @@ $navbg-icon-hover-color: #DADADA;
   min-height: 100%;
 }
 
+#user-menu {
+	position: fixed;
+	z-index: 1199;
+	width: 20rem;
+	top: 4rem;
+	right: 0.5rem;
+  min-height: 20%;
+	/*background-color: $navbg;*/
+	background-color: rgba(255, 255, 255, 0.65);
+	/*border: 1px solid $theme-color-border-light;*/
+	/*border-radius: 0.5rem;*/
+	padding: 2rem;
+}

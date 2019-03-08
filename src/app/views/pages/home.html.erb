@@ -1,5 +1,47 @@
+<% content_for :header do %>
+  <%= image_tag 'header_banner_1.png', class: 'hd-bg gray-scale' %>
+  <div class='hd-box hd-bottom hd-left hd-half hd-txt-left hd-stl-1'>
+    <h1>#TSHPConf 2019 </h1>
+    <h3> Ecole Polytechnique de Tunisie – Tunisia</h3>
+    <h2>March 27 - 29 </h2>      
+    <%= link_to("Register", root_path) %>
+  </div>
+
+  <div class='hd-box hd-half hd-top hd-left hd-txt-left hd-stl-2'>
+    <h2>Tunisian Society of High Performance Computing</h2>
+  </div>  
+
+  <% if not current_user? %>
+  	<div class='hd-box hd-qrtr hd-xt hd-xr hd-login'>
+  	<%= form_tag(login_url) do %>
+			<div class='hd-login-line'>
+			<%= fa_icon("fas, envelope") %>
+			<%= text_field_tag :email, params[:email], placeholder: 'Email' %>
+			</div>
+			<div class='hd-login-line'>
+			<%= fa_icon("fas, unlock") %>
+			<%= password_field_tag :password, 
+			params[:password], placeholder: 'Password' %>
+			</div>
+			<%= submit_tag 'Login', class: 'btn-stl-1' %>
+			<div class='or'><hr/></div>	
+			<%= link_to 'Sign up', new_user_url, class: 'btn-stl-1' %>			
+		<% end %>
+		</div>
+	<% end %>  
+<% end %>
+
 <% content_for :highlights do %>
 <% end %>
+
+<% content_for :footer do %>
+<footer class='ft-container'> 
+  <div class='copyright-box'>
+    <small>Copyright &copy; <%= Time.current.year %> TSHPC All rights reserved.</small>  
+  </div>
+</footer>
+<% end %>  
+
 
 <div class='ml-container text'>
   <h1>The HPC and AI revolution is here</h1>

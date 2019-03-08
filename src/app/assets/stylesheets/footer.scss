@@ -1,14 +1,14 @@
 .ft-container {
 	position: relative;
-	border-top: 1px solid $theme-color-border;
-	height: 30em;
-	background-color: #F1F1F1;
+	min-height: 30em;
+	background-color: $theme-color-light;
 	clear: both;
 
 	.copyright-box {
-		float: center;
-		padding: 1em;
-		width: 50%;
+		position: absolute;
+		bottom: 0;
+		padding: 2rem;
+		width: 100%;
+		margin: auto;
 	}
-
 }

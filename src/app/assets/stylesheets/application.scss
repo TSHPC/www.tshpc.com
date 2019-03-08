@@ -21,6 +21,7 @@
 $font-stack: 'Montserrat';
 $font-h-stack: fa5-proxima-nova, 'NTR', sans-serif;
 $theme-color: #2E4053; 
+$theme-color-light: #F1F1F1;
 $theme-color-border: #FFCC00 ; /*#F1C40F;*/
 $theme-color-border-light: #EBEDEF;
 $theme-color-border-dark:  #BDC3C7;
@@ -65,6 +66,10 @@ a:hover {
   left: 50%;
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+.round {
+  border-radius: 0.2rem;
 }
 
 @import "text";
